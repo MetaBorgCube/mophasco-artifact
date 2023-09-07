@@ -1,0 +1,12 @@
+Program(
+  None()
+, [ Def(DefBind("a", Int("0")))
+  , Def(
+      DefBind(
+        "b"
+      , Add(Var(VarRef("a")), Var(VarRef("c")))
+      )
+    )
+  , Def(DefBind("c", Int("5")))
+  ]
+)

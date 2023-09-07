@@ -1,0 +1,26 @@
+Program(
+  None()
+, [ Def(
+      DefBind(
+        "fac"
+      , Fun(
+          ArgDecl("n", TInt())
+        , If(
+            Eq(Var(VarRef("n")), Int("0"))
+          , Int("1")
+          , Mul(
+              Var(VarRef("n"))
+            , App(
+                Var(VarRef("fac"))
+              , Sub(Var(VarRef("n")), Int("1"))
+              )
+            )
+          )
+        )
+      )
+    )
+  , Def(
+      DefBind("x", App(Var(VarRef("fac")), Int("5")))
+    )
+  ]
+)

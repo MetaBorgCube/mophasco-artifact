@@ -1,0 +1,33 @@
+Program(
+  None()
+, [ Def(
+      DefBind(
+        "fac"
+      , LetRec(
+          [ DefBind(
+              "f"
+            , Fun(
+                ArgDecl("n", TInt())
+              , If(
+                  Eq(Var(VarRef("n")), Int("0"))
+                , Int("1")
+                , Mul(
+                    Var(VarRef("n"))
+                  , App(
+                      Var(VarRef("f"))
+                    , Sub(Var(VarRef("n")), Int("1"))
+                    )
+                  )
+                )
+              )
+            )
+          ]
+        , Var(VarRef("f"))
+        )
+      )
+    )
+  , Def(
+      DefBind("x", App(Var(VarRef("fac")), Int("5")))
+    )
+  ]
+)

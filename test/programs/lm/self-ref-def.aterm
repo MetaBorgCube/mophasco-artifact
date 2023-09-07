@@ -1,0 +1,11 @@
+Program(
+  None()
+, [ Module(
+      "A"
+    , [ Import(ModRef("A"))
+      , Def(
+          DefBind("x", Var(VarRef("x")))
+        ) ]
+      )
+  ]
+)

@@ -1,0 +1,14 @@
+Program(
+  None()
+, [ Def(DefBind("x", Int("1")))
+  , Def(
+      DefBind(
+        "f"
+      , Fun(
+          ArgDecl("x", TBool())
+        , Add(Var(VarRef("x")), Int("1"))
+        )
+      )
+    )
+  ]
+)

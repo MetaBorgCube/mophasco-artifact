@@ -1,0 +1,10 @@
+Program(
+  None()
+, [ Module("A", [Import(ModRef("B")), Def(DefBind("a", Var(VarRef("b"))))])
+  , Module("B", [Import(ModRef("A")), Import(ModRef("B")), Def(DefBind("b", Int("21")))])
+  , Module(
+      "M"
+    , [Import(ModRef("A")), Def(DefBind("x", Var(VarRef("a"))))]
+    )
+  ]
+)

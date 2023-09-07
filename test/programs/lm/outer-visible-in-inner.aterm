@@ -1,0 +1,13 @@
+Program(
+  None()
+, [ Module(
+      "A"
+    , [ Def(DefBind("x", Int("5")))
+      , Module(
+          "B"
+        , [Def(DefBind("y", Var(VarRef("x"))))]
+        )
+      ]
+    )
+  ]
+)

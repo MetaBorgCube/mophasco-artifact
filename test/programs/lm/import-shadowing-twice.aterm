@@ -1,0 +1,23 @@
+Program(
+  None()
+, [ Module(
+      "B"
+    , []
+    )
+  , Module(
+      "A"
+    , [ Module("B", [Def(DefBind("x", Int("19")))]) ]
+    )
+  , Module(
+      "C"
+    , [ Module("A", []) ]
+    )
+  , Module(
+      "M"
+    , [ Import(ModRef("B"))
+      , Import(ModRef("A"))
+      , Def(DefBind("y", Var(VarRef("x"))))
+      ]
+    )
+  ]
+)
